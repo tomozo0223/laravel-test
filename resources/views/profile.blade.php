@@ -25,3 +25,10 @@
         <p>非ログイン中です</p>
     @endguest
 @endsection
+
+<x-alert bg="bg-rose-600" role="alert">
+    <h1>Test</h1>
+    <x-slot:title>
+        Light
+    </x-slot:title>
+</x-alert>
