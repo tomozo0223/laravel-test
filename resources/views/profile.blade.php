@@ -24,6 +24,9 @@
         <button>ログイン</button>
         <p>非ログイン中です</p>
     @endguest
+
+    <img src="{{ asset('images/261a8ca4-c196-4d08-99af-fdda0bedf56b.jpg.png') }}" alt="">
+
 @endsection
 
 <x-alert bg="bg-rose-600" role="alert">
