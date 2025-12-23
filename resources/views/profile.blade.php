@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Profile</title>
+</head>
+
+<body>
+    <h1>Profile</h1>
+    <h2>ようこそ{{ $name }}さん!</h2>
+
+    @if ($is_admin)
+        <p>あなたは管理者です</p>
+    @else
+        <p>あなたは一般Peopleです</p>
+    @endif
+
+    <ul>
+        @foreach ($skills as $skill)
+            <li>{{ $skill }}</li>
+        @endforeach
+    </ul>
+
+    {{-- ログイン状態なら表示 --}}
+    @auth
+        <p>ログイン中です</p>
+        <button>ログアウト</button>
+    @endauth
+    @guest
+        <button>ログイン</button>
+        <p>非ログイン中です</p>
+    @endguest
+</body>
+
+</html>
