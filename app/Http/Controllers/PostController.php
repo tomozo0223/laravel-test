@@ -2,16 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
     public function index()
     {
-        $posts = [
-            1 => ['title' => 'Laravelの基礎入門', 'body' => 'test test test'],
-            2 => ['title' => 'JavaScriptの基礎入門', 'body' => 'test2 test2 test2']
-        ];
+        $posts = Post::with('user')->latest()->paginate(10);
+
         return view('posts.index', [
             'posts' => $posts
         ]);
